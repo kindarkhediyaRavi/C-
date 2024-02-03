@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+namespace StackClass
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack obj = new Stack();
+            obj.Push(11);
+            obj.Push("A");
+            obj.Push('b');
+            obj.Push(22.33);
+
+            foreach (object ans in obj)
+                Console.WriteLine(ans);
+            obj.Pop();
+            obj.Pop();
+            Console.WriteLine("After POP method");
+            foreach (object ans in obj)
+                Console.WriteLine(ans);
+            Console.WriteLine("Peek() is:" + obj.Peek());
+            Console.WriteLine("Count is:" + obj.Count);
+            Console.WriteLine("contains() is:" + obj.Contains(12));
+            Stack obj2 = new Stack();
+            obj2 = (Stack)obj.Clone();
+            Console.WriteLine("After Clone");
+            foreach (object ans in obj2)
+                Console.WriteLine(ans);
+            object[] arr1;
+            arr1 = obj.ToArray();
+            Console.WriteLine("After Convert into Array");
+            for (int i = 0; i < arr1.Length; i++)
+                Console.WriteLine(arr1[i]);
+            obj.Clear();
+            Console.Read();
+        }
+    }
+}
